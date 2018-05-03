@@ -19,8 +19,8 @@ namespace AlgoDat
         elem = Elem;
       }
 
-      public static ListElement operator ++(ListElement elem) => elem.next;
-      public static ListElement operator --(ListElement elem) => elem.prev;
+      public static ListElement operator ++(ListElement le) => le.next;
+      public static ListElement operator --(ListElement le) => le.prev;
     }
     protected ListElement start, end;
 
@@ -30,7 +30,6 @@ namespace AlgoDat
     }
     public virtual bool Insert(int elem)
     {
-     // Add(elem);
       return true;
     }
     public virtual bool Delete(int elem)
@@ -93,7 +92,31 @@ namespace AlgoDat
   }
   abstract class BinaryTree
   {
+    protected class Node
+    {
+      public int elem;
+      public Node left, right;
 
+      public Node(int Elem)
+      {
+        elem = Elem;
+      }
+    }
+
+    protected Node root;
+
+    protected Node _search(int elem)
+    {
+      Node tmp = root;
+        while (tmp != null && tmp.elem != elem )
+        {
+          if (elem < tmp.elem)
+            tmp = tmp.left;
+          else
+            tmp = tmp.right;
+        }
+        return tmp;
+    }
   }
 
   abstract class HashFkt : Array
