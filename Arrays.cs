@@ -11,7 +11,7 @@ namespace AlgoDat
 
   }
 
-  class SetUnsortedArray : Array, ISet
+  class SetUnsortedArray : MultiSetUnsortedArray, ISet
   {
 
   }
@@ -21,7 +21,7 @@ namespace AlgoDat
 
   }
 
-  class SetSortedArray : Array, IMultiSetSorted
+  class SetSortedArray : MultiSetSortedArray, IMultiSetSorted
   {
 
   }

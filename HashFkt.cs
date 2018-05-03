@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AlgoDat
 {
-  class HashTabSepChain : HashFkt
+  class HashTabSepChain : HashFkt, ISet
   {
 
   }
 
-  class HashTabQuadProb : HashFkt
+  class HashTabQuadProb : HashFkt, ISet
   {
 
   }

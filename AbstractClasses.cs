@@ -96,7 +96,7 @@ namespace AlgoDat
 
   }
 
-  abstract class HashFkt : Array, ISet
+  abstract class HashFkt : Array
   {
 
   }
