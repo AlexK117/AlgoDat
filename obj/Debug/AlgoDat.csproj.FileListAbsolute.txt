@@ -1,0 +1,7 @@
+C:\Users\eugen\Source\Repos\AlgoDat\AlgoDat\bin\Debug\AlgoDat.exe.config
+C:\Users\eugen\Source\Repos\AlgoDat\AlgoDat\bin\Debug\AlgoDat.exe
+C:\Users\eugen\Source\Repos\AlgoDat\AlgoDat\bin\Debug\AlgoDat.pdb
+C:\Users\eugen\Source\Repos\AlgoDat\AlgoDat\obj\Debug\AlgoDat.csprojResolveAssemblyReference.cache
+C:\Users\eugen\Source\Repos\AlgoDat\AlgoDat\obj\Debug\AlgoDat.csproj.CoreCompileInputs.cache
+C:\Users\eugen\Source\Repos\AlgoDat\AlgoDat\obj\Debug\AlgoDat.exe
+C:\Users\eugen\Source\Repos\AlgoDat\AlgoDat\obj\Debug\AlgoDat.pdb
