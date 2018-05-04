@@ -15,38 +15,38 @@ namespace AlgoDat
 
       return false;
     }
+
     public bool Insert(int elem)
     {
-      if (root == null)
+      if (root == null)               //Neue Wurzel
       {
         root = new Node(elem);
         return true;
       }
 
-      Node tmp = root, b = null;
+      Node tmp = new Node(elem);      //Sonst
+      Node n = _searchPosAbove(elem); //n = Vorgänger
 
-      while (tmp != null && tmp.elem != elem)
-      {
-        b = tmp;
+      tmp.above = n;
 
-        if (elem < tmp.elem)
-          tmp = tmp.left;
-        else
-          tmp = tmp.right;
-      }
-
-      if (tmp == null)
-      {
-        tmp = new Node(elem);
-
-        if (b.elem < elem)
-          b.right = tmp;
-        else b.left = tmp;
-      }
+      if (n.elem < elem)
+        n.right = tmp;
       else
-        return false;
+        n.left = tmp; 
 
       return true;
+    }
+
+    public void Print()
+    {
+      Node n = root;
+
+      Inorder(n);
+      Console.WriteLine();
+      Preorder(n);
+      Console.WriteLine();
+      Postorder(n);
+      Console.WriteLine();
     }
   }
 

@@ -41,13 +41,15 @@ namespace AlgoDat
 
       BinSearchTree tree = new BinSearchTree();
       tree.Insert(1);
-
       tree.Insert(3);
       tree.Insert(8);
       tree.Insert(6);
       tree.Insert(0);
       tree.Insert(2);
-
+      tree.Print();
+      Console.WriteLine(tree.Search(9));
+      Console.WriteLine(tree.Search(1));
+      Console.WriteLine(tree.Search(6));
       Console.ReadKey();
     }
   }

@@ -21,6 +21,7 @@ namespace AlgoDat
 
       public static ListElement operator ++(ListElement le) => le.next;
       public static ListElement operator --(ListElement le) => le.prev;
+      public override string ToString() => Convert.ToString(elem);
     }
     protected ListElement start, end;
 
@@ -39,7 +40,7 @@ namespace AlgoDat
     public void Print()
     {
       for (ListElement tmp = start; tmp != null; tmp++)
-        Console.WriteLine(tmp.elem);
+        Console.WriteLine(tmp);
     }
 
     /// <summary>
@@ -95,27 +96,82 @@ namespace AlgoDat
     protected class Node
     {
       public int elem;
-      public Node left, right;
+      public Node left, right, above;
 
       public Node(int Elem)
       {
         elem = Elem;
       }
-    }
 
+      public override string ToString() => Convert.ToString(elem);
+    }
     protected Node root;
 
-    protected Node _search(int elem)
+    protected Node _search(int elem)          //Sucht Element
     {
       Node tmp = root;
-        while (tmp != null && tmp.elem != elem )
+      while (tmp != null && tmp.elem != elem)
+      {
+        if (elem < tmp.elem)
         {
-          if (elem < tmp.elem)
-            tmp = tmp.left;
-          else
-            tmp = tmp.right;
+          tmp = tmp.left;
         }
-        return tmp;
+        else
+        {
+          tmp = tmp.right;
+        }
+      }
+      return tmp;
+    }
+    protected Node _searchPosAbove(int elem)  //Sucht Position des Vorgängers
+    {
+      Node tmp = root;
+      while (tmp != null && tmp.elem != elem)
+      {
+        if (elem < tmp.elem)
+        {
+          if (tmp.left == null)
+            return tmp;
+          tmp = tmp.left;
+        }
+        else
+        {
+          if (tmp.right == null)
+            return tmp;
+          tmp = tmp.right;
+        }
+      }
+      return tmp;
+    }
+
+    protected void Inorder(Node n)
+    {
+      if (n == null)
+        return;
+
+      Inorder(n.left);
+      Console.Write(n + " ");
+      Inorder(n.right);
+    }
+
+    protected void Preorder(Node n)
+    {
+      if (n == null)
+        return;
+
+      Console.Write(n + " ");
+      Preorder(n.left);
+      Preorder(n.right);
+    }
+
+    protected void Postorder(Node n)
+    {
+      if (n == null)
+        return;
+
+      Postorder(n.left);
+      Postorder(n.right);
+      Console.Write(n + " ");
     }
   }
 
