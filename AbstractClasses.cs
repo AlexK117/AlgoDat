@@ -37,6 +37,7 @@ namespace AlgoDat
     {
       return true;
     }
+
     public void Print()
     {
       for (ListElement tmp = start; tmp != null; tmp++)
@@ -89,8 +90,17 @@ namespace AlgoDat
 
   abstract class Array
   {
+    protected int[] array = new int[10];
 
+    protected int _search(int elem)
+    {
+      int index = 0;
+      while (array[index] != elem)
+        index++;
+      return index;
+    }
   }
+
   abstract class BinaryTree
   {
     protected class Node
@@ -105,7 +115,9 @@ namespace AlgoDat
 
       public override string ToString() => Convert.ToString(elem);
     }
+
     protected Node root;
+    public int level;
 
     protected Node _search(int elem)          //Sucht Element
     {
@@ -123,24 +135,32 @@ namespace AlgoDat
       }
       return tmp;
     }
+
     protected Node _searchPosAbove(int elem)  //Sucht Position des Vorgängers
     {
       Node tmp = root;
-      while (tmp != null && tmp.elem != elem)
+
+      while (tmp != null)
       {
+        if (tmp.elem == elem)                 //Falls Element bereits existiert
+          return null;
+
         if (elem < tmp.elem)
         {
           if (tmp.left == null)
             return tmp;
+
           tmp = tmp.left;
         }
         else
         {
           if (tmp.right == null)
             return tmp;
+
           tmp = tmp.right;
         }
       }
+      
       return tmp;
     }
 
@@ -173,6 +193,73 @@ namespace AlgoDat
       Postorder(n.right);
       Console.Write(n + " ");
     }
+
+
+    protected void PrintVisual()
+    {
+      Node n = root;
+      if (n == null)
+        return;
+
+      for (int i = 1; n.right != null; i++)
+      {
+        n = n.right;
+        level = i;
+      }
+
+      for (Node m = n; m != null; m = m.above)
+      {
+        for (int i = level; i >= 0; i--)
+          Console.Write("   ");
+        
+        Console.Write(m);
+
+        if (m == root)
+        {
+          break;
+        }
+
+        if (m.left != null)
+        {
+          Console.WriteLine();
+
+          for (int j = level; j >= 0; j--)
+            Console.Write("   ");
+
+          Console.WriteLine("   " + m.left);
+        }
+        else
+          Console.WriteLine("\n");
+
+        level--;
+      }
+
+      if (root.left != null)
+      {
+        level++;
+        Console.WriteLine("\n");
+        for (Node m = root.left; m != null; m = m.left)
+        {
+          for (int j = level; j >= 0; j--)
+            Console.Write("   ");
+
+          Console.WriteLine(m);
+          if (m.left != null && m.left.right != null)
+          {
+            for (int j = level; j >= 0; j--)
+              Console.Write("   ");
+
+            Console.WriteLine("      " + m.left.right);
+          }
+          else
+          {
+            Console.WriteLine();
+          }
+
+          level++;
+        }
+      }
+    }             //Druckt nur äußere Äste
   }
 
   abstract class HashFkt : Array

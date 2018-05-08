@@ -24,17 +24,31 @@ namespace AlgoDat
         return true;
       }
 
-      Node tmp = new Node(elem);      //Sonst
+      Node tmp = new Node(elem);      //Neuer Knoten
       Node n = _searchPosAbove(elem); //n = Vorgänger
 
-      tmp.above = n;
+      if (n != null)
+      {
+        tmp.above = n;
 
-      if (n.elem < elem)
-        n.right = tmp;
-      else
-        n.left = tmp; 
+        if (n.elem < elem)
+        {
+          n.right = tmp;
+          return true;
+        }
+        else
+        {
+          n.left = tmp;
+          return true;
+        }
+      }
+      return false;
+    }
 
-      return true;
+    public bool Delete(int elem)
+    {
+
+      return false;
     }
 
     public void Print()
@@ -47,6 +61,11 @@ namespace AlgoDat
       Console.WriteLine();
       Postorder(n);
       Console.WriteLine();
+    }
+
+    public void Printv()
+    {
+      PrintVisual();
     }
   }
 
