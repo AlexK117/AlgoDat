@@ -90,14 +90,40 @@ namespace AlgoDat
 
   abstract class Array
   {
-    protected int[] array = new int[10];
+    protected const int n = 3;
+    public int[] array = new int[n];
+
+    public int this[int Index]
+    {
+      get
+      {
+        return array[Index];
+      }
+
+      set
+      {
+        array[Index] = value;
+      }
+    }
 
     protected int _search(int elem)
     {
-      int index = 0;
-      while (array[index] != elem)
-        index++;
-      return index;
+      int index ;
+      for (index = 0; index < array.Length; index++) 
+      {
+        if (array[index] == elem)
+          return index;
+      }
+
+      return -1;
+    }
+
+    public void Print()
+    {
+      foreach (int elem in array)
+      {
+        Console.WriteLine(elem);
+      } 
     }
   }
 

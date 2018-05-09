@@ -67,6 +67,15 @@ namespace AlgoDat
       //Console.WriteLine(tree.Search(1));
       //Console.WriteLine(tree.Search(6));
       //tree.Printv();
+
+      SetUnsortedArray ar = new SetUnsortedArray();
+      Console.WriteLine(ar.Insert(3));
+      Console.WriteLine(ar.Insert(2)) ;
+      Console.WriteLine(ar.Insert(3));
+      Console.WriteLine(ar.Insert(5));
+      Console.WriteLine(ar.Delete(3));
+      Console.WriteLine(ar.Insert(5));
+      ar.Print();
       Console.ReadKey();
     }
   }

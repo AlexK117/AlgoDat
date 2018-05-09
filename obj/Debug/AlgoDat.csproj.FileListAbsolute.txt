@@ -15,3 +15,6 @@ C:\Users\eugen\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.csprojResolveAssemblyR
 C:\Users\eugen\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.csproj.CoreCompileInputs.cache
 C:\Users\eugen\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.exe
 C:\Users\eugen\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.pdb
+C:\Users\oeztu\OneDrive\Dokumente\GitHub\AlgoDat\bin\Debug\AlgoDat.exe
+C:\Users\oeztu\OneDrive\Dokumente\GitHub\AlgoDat\bin\Debug\AlgoDat.pdb
+C:\Users\oeztu\OneDrive\Dokumente\GitHub\AlgoDat\obj\Debug\AlgoDat.csprojResolveAssemblyReference.cache
