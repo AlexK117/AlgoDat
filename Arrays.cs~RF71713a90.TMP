@@ -10,18 +10,14 @@ namespace AlgoDat
   {
     public bool Search(int elem)
     {
-      int index = _search(elem);
-      if (index != -1)
+      if (array[_search(elem)] == elem)
       {
-        if (array[index] == elem)
-        {
-          return true;
-        }
+        return true;
       }
       return false;
     }
 
-    public virtual bool Insert(int elem)
+    public bool Insert(int elem)
     {
       int index = _search(0);
       if (index != -1)
@@ -35,14 +31,9 @@ namespace AlgoDat
     public bool Delete(int elem)
     {
       int i = _search(0) - 1;
-
       if (i == -2)
-      {
-        i = array.Length - 1;
-      }
-
+        i = array.Length-1;
       int index = _search(elem);
-
       if(index != -1)
       {
         array[index] = array[i];
@@ -55,14 +46,7 @@ namespace AlgoDat
 
   class SetUnsortedArray : MultiSetUnsortedArray, ISet
   {
-    public override bool Insert(int elem)
-    {
-      if (Search(elem))
-      {
-        return false;
-      }
-      return base.Insert(elem);
-    }
+
   }
 
   class MultiSetSortedArray : Array, IMultiSetSorted

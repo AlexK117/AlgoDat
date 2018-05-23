@@ -45,6 +45,7 @@ namespace AlgoDat
       }
     }
 
+<<<<<<< HEAD
     public void InOrderRecursiveTreeDisplay(Node current)
     {
       if (current != null)
@@ -124,6 +125,32 @@ namespace AlgoDat
           }
         }
       }
+=======
+      Node tmp = new Node(elem);      //Neuer Knoten
+      Node n = _searchPosAbove(elem); //n = Vorgänger
+
+      if (n != null)
+      {
+        tmp.above = n;
+
+        if (n.elem < elem)
+        {
+          n.right = tmp;
+          return true;
+        }
+        else
+        {
+          n.left = tmp;
+          return true;
+        }
+      }
+      return false;
+    }
+
+    public bool Delete(int elem)
+    {
+
+>>>>>>> 243348b1702ff6feddab66ae2e9459cacd99a6d2
       return false;
     }
 
@@ -245,6 +272,11 @@ namespace AlgoDat
         }
       }
       return true;
+    }
+
+    public void Printv()
+    {
+      PrintVisual();
     }
   }
 
