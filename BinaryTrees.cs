@@ -9,7 +9,7 @@ namespace AlgoDat
 
   class BinSearchTree : BinaryTree, ISetSorted
   {   
-    public BinSearchTree()
+    public BinSearchTree()    //Ich glaub das ist eh default-Einstellung (Eugen)
     {
       root = null;
     }
