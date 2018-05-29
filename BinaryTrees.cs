@@ -16,15 +16,15 @@ namespace AlgoDat
   
     public void Print()
     {
-      Node tmp = root;
+      Node current = root;
 
-      if (tmp != null)
+      if (current != null)
       {
-        Inorder(tmp);
+        Inorder(current);
         Console.WriteLine();
-        Preorder(tmp);
+        Preorder(current);
         Console.WriteLine();
-        Postorder(tmp);
+        Postorder(current);
         Console.WriteLine();
       }
     }
@@ -92,7 +92,12 @@ namespace AlgoDat
       //Case 1: The current has no children
       if (current.left == null && current.right == null)
       {
-        if (parent.data > current.data)
+        if (parent == null)
+        {
+          root = null;
+         
+        }
+        else if (parent.data > current.data)
         {
           parent.left = null;
         }
