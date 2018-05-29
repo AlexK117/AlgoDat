@@ -65,12 +65,12 @@ namespace AlgoDat
     }
   }
 
-  class MultiSetSortedArray : Array, IMultiSetSorted
+  class MultiSetSortedArray : Array//, IMultiSetSorted
   {
 
   }
 
-  class SetSortedArray : MultiSetSortedArray, IMultiSetSorted
+  class SetSortedArray : MultiSetSortedArray//, IMultiSetSorted
   {
 
   }

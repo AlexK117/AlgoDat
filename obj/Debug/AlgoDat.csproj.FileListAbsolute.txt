@@ -18,3 +18,10 @@ C:\Users\eugen\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.pdb
 C:\Users\oeztu\OneDrive\Dokumente\GitHub\AlgoDat\bin\Debug\AlgoDat.exe
 C:\Users\oeztu\OneDrive\Dokumente\GitHub\AlgoDat\bin\Debug\AlgoDat.pdb
 C:\Users\oeztu\OneDrive\Dokumente\GitHub\AlgoDat\obj\Debug\AlgoDat.csprojResolveAssemblyReference.cache
+C:\Users\X\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.csprojResolveAssemblyReference.cache
+C:\Users\X\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.csproj.CoreCompileInputs.cache
+C:\Users\X\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.exe
+C:\Users\X\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.pdb
+C:\Users\X\Documents\GitHub\AlgoDat\bin\Debug\AlgoDat.exe.config
+C:\Users\X\Documents\GitHub\AlgoDat\bin\Debug\AlgoDat.exe
+C:\Users\X\Documents\GitHub\AlgoDat\bin\Debug\AlgoDat.pdb

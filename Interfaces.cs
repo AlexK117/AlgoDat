@@ -8,10 +8,10 @@ namespace AlgoDat
 {
   interface IDictionary
   {
-    //bool Search(int elem);
-    //bool Insert(int elem);
-    //bool Delete(int elem);
-    //void Print();
+    bool Search(int elem);
+    bool Insert(int elem);
+    bool Delete(int elem);
+    void Print();
   }
 
   interface IMultiSet : IDictionary { }
