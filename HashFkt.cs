@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AlgoDat
-{
+{/*
   class HashTabSepChain : HashFkt, ISet
   {
 
@@ -14,5 +14,5 @@ namespace AlgoDat
   class HashTabQuadProb : HashFkt, ISet
   {
 
-  }
+  }*/
 }

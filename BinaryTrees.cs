@@ -6,95 +6,45 @@ using System.Threading.Tasks;
 
 namespace AlgoDat
 {
-  public class Node
-  {
-    public int data;
-    public int key;
 
-    public Node left { get; set; }
-    public Node right { get; set; }
-
-    public Node() { }
-
-    public Node(int Data)
-    {
-      data = Data;
-    }
-
-    public Node(int Data, int Key)
-    {
-      data = Data;
-      key = Key;
-    }
-  }
-
-  public class BinSearchTree : Node
-  {
-    private Node root;
-
+  class BinSearchTree : BinaryTree, ISetSorted
+  {   
     public BinSearchTree()
     {
       root = null;
     }
-
+  
     public void Print()
     {
-      if (root != null)
+      Node tmp = root;
+
+      if (tmp != null)
       {
-        InOrderRecursiveTreeDisplay(root);
+        Inorder(tmp);
+        Console.WriteLine();
+        Preorder(tmp);
+        Console.WriteLine();
+        Postorder(tmp);
+        Console.WriteLine();
       }
     }
-
-<<<<<<< HEAD
-    public void InOrderRecursiveTreeDisplay(Node current)
+    public bool Search(int elem)
     {
-      if (current != null)
-      {
-        InOrderRecursiveTreeDisplay(current.left);
-        Console.Write("({0})", current.data);
-        InOrderRecursiveTreeDisplay(current.right);
-      }
+      if (_search(elem) != null)
+        return true;
+
+      return false;
     }
 
-    public bool Search(int data)
-    {
-      bool isFound = false; ;
-      Node current = root;
-      while (current != null)
-      {
-        if (current.data == data)
-        {
-          isFound = true;
-        }
-        if (data < current.data)
-        {
-          if (current.left != null)
-          {
-            current = current.left;
-          }
-          else { break; }
-        }
-
-        if (data > current.data)
-        {
-          if (current.right != null)
-          {
-            current = current.right;
-          }
-          else { break; }
-        }
-      }
-      if (isFound) return true;
-      else return false;
-    }
-
-    public virtual bool Add(int data)
+    
+    public virtual bool Insert(int data)
     {
       Node newItem = new Node(data);
 
       if (root == null)
       {
         root = newItem;
+        return true;
       }
 
       else
@@ -125,71 +75,36 @@ namespace AlgoDat
           }
         }
       }
-=======
-      Node tmp = new Node(elem);      //Neuer Knoten
-      Node n = _searchPosAbove(elem); //n = Vorgänger
-
-      if (n != null)
-      {
-        tmp.above = n;
-
-        if (n.elem < elem)
-        {
-          n.right = tmp;
-          return true;
-        }
-        else
-        {
-          n.left = tmp;
-          return true;
-        }
-      }
-      return false;
-    }
-
-    public bool Delete(int elem)
-    {
-
->>>>>>> 243348b1702ff6feddab66ae2e9459cacd99a6d2
       return false;
     }
 
     public virtual bool Delete(int data)
     {
-      bool isFound = false;
       if (root == null)
       {
         return false;
       }
 
-      Node current = root;
-      Node parent = null;
-
-      while (current != null && !isFound)
-      {
-
-        if (data < current.data)
-        {
-          parent = current;
-          current = current.left;
-        }
-        else if (data > current.data)
-        {
-          parent = current;
-          current = current.right;
-        }
-        if (current == null) return false;
-        else isFound = true;
-      }
+      Node current = _search(data);
+      if (current == null) return false;
+      Node parent = _searchPosAbove(data);          
 
       //Case 1: The current has no children
       if (current.left == null && current.right == null)
       {
+        if (parent.data > current.data)
+        {
+          parent.left = null;
+        }
+        else if (parent.data < current.data)
+        {
+          parent.right = null;
+        }
         current = null;
       }
 
       //Case 2: The current has no left child
-      if (current.left == null)
+      else if (current.left == null)
       {
         if (parent == null)
         {
@@ -210,7 +125,7 @@ namespace AlgoDat
       }
 
       //Case 3: The current has no right child
-      if (current.right == null)
+      else if (current.right == null)
       {
         if (parent == null)
         {
@@ -231,8 +146,9 @@ namespace AlgoDat
       }
 
       //Case 4: The current has a left an a right child: Replace current with node with smallest value in left subtree
-      if (current.right != null && current.left != null)
+      else if (current.right != null && current.left != null)
       {
+
         Node mostright = current.left.right;
         Node mrparent = current.left;
 
@@ -273,16 +189,11 @@ namespace AlgoDat
       }
       return true;
     }
-
-    public void Printv()
-    {
-      PrintVisual();
-    }
   }
 
-  public class AVLTree : BinSearchTree
+   class AVLTree : BinSearchTree
   {
-    public override bool Add(int data)
+    public override bool Insert(int data)
     {
       return false;
     }
@@ -293,9 +204,9 @@ namespace AlgoDat
     }
   }
 
-  public class Treap : BinSearchTree
+   class Treap : BinSearchTree
   {
-    public override bool Add(int data)
+    public override bool Insert(int data)
     {
       return false;
     }
@@ -305,69 +216,4 @@ namespace AlgoDat
       return false;
     }
   }
-
-
-  class Program
-  {
-    static void Main(string[] args)
-    {
-    }
-  }
-  /*
-    class BinSearchTree : BinaryTree, ISetSorted
-    {
-      public bool Search(int elem)
-      {
-        if (_search(elem) != null)
-          return true;
-
-        return false;
-      }
-
-      public bool Insert(int elem)
-      {
-        if (root == null)               //Neue Wurzel
-        {
-          root = new Node(elem);
-          return true;
-        }
-
-        Node tmp = new Node(elem);      //Sonst
-        Node n = _searchPosAbove(elem); //n = Vorgänger
-
-        tmp.above = n;
-
-        if (n.elem < elem)
-          n.right = tmp;
-        else
-          n.left = tmp; 
-
-        return true;
-      }
-
-      public void Print()
-      {
-        Node n = root;
-
-        Inorder(n);
-        Console.WriteLine();
-        Preorder(n);
-        Console.WriteLine();
-        Postorder(n);
-        Console.WriteLine();
-      }
-    }
-
-    class AVLTree : BinSearchTree
-    {
-
-    }
-
-    class Treap : BinSearchTree
-    {
-
-    }
-    */
-
-
 }

@@ -37,21 +37,23 @@ namespace AlgoDat
       //neu.Print();
       //Console.WriteLine(neu.Search(5));
 
-      //BinSearchTree tree = new BinSearchTree();
 
+      /* Zum Testen vom BinSearchTree
+      BinSearchTree tree = new BinSearchTree();
 
-      //tree.Insert(1);
-      //tree.Insert(3);
-      //tree.Insert(8);
-      //tree.Insert(6);
-      //tree.Insert(0);
-      //tree.Insert(2);
-      //tree.Insert(4);
-      //tree.Insert(19);
-      //tree.Insert(29);
-      //tree.Insert(28);
-      //tree.Insert(30);
-      //tree.Insert(26);
+      tree.Insert(5);
+      tree.Insert(1);
+      tree.Insert(3);
+     tree.Insert(8);
+      tree.Insert(6);
+      tree.Insert(0);
+     tree.Insert(2);
+      tree.Insert(4);
+      tree.Insert(19);
+      tree.Insert(29);
+      tree.Insert(28);
+      tree.Insert(30);
+      tree.Insert(26);
       //tree.Insert(-1);
       //tree.Insert(-3);
       //tree.Insert(-2);
@@ -62,12 +64,19 @@ namespace AlgoDat
       //tree.Insert(-7);
       //WriteLine(tree.Insert(8));
       //WriteLine(tree.Insert(0));
-      //tree.Print();
+
+      tree.Print();
+
+      tree.Delete(5);
+
+      tree.Print();
       //Console.WriteLine(tree.Search(9));
       //Console.WriteLine(tree.Search(1));
       //Console.WriteLine(tree.Search(6));
       //tree.Printv();
 
+      */
+      /*
       SetUnsortedArray ar = new SetUnsortedArray();
       Console.WriteLine(ar.Insert(3));
       Console.WriteLine(ar.Insert(2)) ;
@@ -77,6 +86,7 @@ namespace AlgoDat
       Console.WriteLine(ar.Insert(5));
       ar.Print();
       Console.ReadKey();
+      */
     }
   }
 }

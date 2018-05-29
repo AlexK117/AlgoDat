@@ -108,8 +108,8 @@ namespace AlgoDat
 
     protected int _search(int elem)
     {
-      int index ;
-      for (index = 0; index < array.Length; index++) 
+      int index;
+      for (index = 0; index < array.Length; index++)
       {
         if (array[index] == elem)
           return index;
@@ -123,7 +123,7 @@ namespace AlgoDat
       foreach (int elem in array)
       {
         Console.WriteLine(elem);
-      } 
+      }
     }
   }
 
@@ -131,26 +131,38 @@ namespace AlgoDat
   {
     protected class Node
     {
-      public int elem;
-      public Node left, right, above;
+      public int data;
+      public int key;
 
-      public Node(int Elem)
+      public Node left { get; set; }
+      public Node right { get; set; }
+      public Node above { get; set; }
+
+      public Node() { }
+
+      public Node(int Data)
       {
-        elem = Elem;
+        data = Data;
       }
 
-      public override string ToString() => Convert.ToString(elem);
+      public Node(int Data, int Key)
+      {
+        data = Data;
+        key = Key;
+      }
+
+
+      public override string ToString() => Convert.ToString(data);
     }
 
     protected Node root;
-    public int level;
 
-    protected Node _search(int elem)          //Sucht Element
+    protected Node _search(int data)          //Sucht Element
     {
       Node tmp = root;
-      while (tmp != null && tmp.elem != elem)
+      while (tmp != null && tmp.data != data)
       {
-        if (elem < tmp.elem)
+        if (data < tmp.data)
         {
           tmp = tmp.left;
         }
@@ -162,20 +174,22 @@ namespace AlgoDat
       return tmp;
     }
 
-    protected Node _searchPosAbove(int elem)  //Sucht Position des Vorgängers
+    protected Node _searchPosAbove(int data)  //Sucht Position des Vorgängers
     {
+      Node above = null;
       Node tmp = root;
 
       while (tmp != null)
       {
-        if (tmp.elem == elem)                 //Falls Element bereits existiert
-          return null;
+        if (tmp.data == data)                 //Falls Element bereits existiert
+          return above;
 
-        if (elem < tmp.elem)
+        if (data < tmp.data)
         {
           if (tmp.left == null)
             return tmp;
 
+          above = tmp;
           tmp = tmp.left;
         }
         else
@@ -183,12 +197,16 @@ namespace AlgoDat
           if (tmp.right == null)
             return tmp;
 
+          above = tmp;
           tmp = tmp.right;
         }
       }
-      
+
       return tmp;
     }
+
+
+
 
     protected void Inorder(Node n)
     {
@@ -220,76 +238,10 @@ namespace AlgoDat
       Console.Write(n + " ");
     }
 
-
-    protected void PrintVisual()
+    
+    abstract class HashFkt : Array
     {
-      Node n = root;
-      if (n == null)
-        return;
 
-      for (int i = 1; n.right != null; i++)
-      {
-        n = n.right;
-        level = i;
-      }
-
-      for (Node m = n; m != null; m = m.above)
-      {
-        for (int i = level; i >= 0; i--)
-          Console.Write("   ");
-        
-        Console.Write(m);
-
-        if (m == root)
-        {
-          break;
-        }
-
-        if (m.left != null)
-        {
-          Console.WriteLine();
-
-          for (int j = level; j >= 0; j--)
-            Console.Write("   ");
-
-          Console.WriteLine("   " + m.left);
-        }
-        else
-          Console.WriteLine("\n");
-
-        level--;
-      }
-
-      if (root.left != null)
-      {
-        level++;
-        Console.WriteLine("\n");
-        for (Node m = root.left; m != null; m = m.left)
-        {
-          for (int j = level; j >= 0; j--)
-            Console.Write("   ");
-
-          Console.WriteLine(m);
-          if (m.left != null && m.left.right != null)
-          {
-            for (int j = level; j >= 0; j--)
-              Console.Write("   ");
-
-            Console.WriteLine("      " + m.left.right);
-          }
-          else
-          {
-            Console.WriteLine();
-          }
-
-          level++;
-        }
-      }
-    }             //Druckt nur äußere Äste
-  }
-
-  abstract class HashFkt : Array
-  {
-
+    }
   }
 }
