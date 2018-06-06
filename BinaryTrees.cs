@@ -255,25 +255,49 @@ namespace AlgoDat
     {
       base.Insert(data);
 
-      if (isBalanced(data))
+      Node item = _search(data);
+      Node parent = _searchPosAbove(data);
+
+      while (parent != null)
       {
-        return true;
+        int currentBalance = isBalanced(item, parent);
+
+        //is the tree balanced? Note: not always!!
+        if (currentBalance == 0)  //yes
+          break;
+        else if (currentBalance > 1 || currentBalance < -1) //no
+        {
+          balance(item);  //mehrere balances??!!
+        }
+
+        item = parent;
+        parent = _searchPosAbove(item.data);
       }
-      else
-      {
-        balance(data);
-        return true;
-      }
+      
     }
 
     public override bool Delete(int data)
     {
-      return false;
+      base.Delete(data);
+
+      //ausgleichs shit
+    }
+    
+    private int isBalanced(Node item, Node parent)
+    {
+      if(item.data < parent.data)
+      {
+        return parent.balance += 1;
+      }
+      else
+      {
+        return parent.balance -= 1;
+      }
     }
 
-    public bool isBalanced(Node n)
+    private void balance(Node item)
     {
-      isBalanced();
+      //Hier evtl Fallunterscheidung ob man RL oder LR oder normal L oder normal R rot machen muss.
     }
   }
 

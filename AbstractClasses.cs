@@ -1,4 +1,4 @@
-﻿using System;
+﻿<using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -133,6 +133,7 @@ namespace AlgoDat
     {
       public int data;
       public int priority;
+      public int balance;
 
       public Node left { get; set; }
       public Node right { get; set; }
