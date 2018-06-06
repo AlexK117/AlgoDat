@@ -129,14 +129,14 @@ namespace AlgoDat
 
   abstract class BinaryTree
   {
-    protected class Node
+    internal class Node
     {
       public int data;
-      public int key;
+      public int priority;
 
       public Node left { get; set; }
       public Node right { get; set; }
-      public Node above { get; set; }
+      public Node parent { get; set; }
 
       public Node() { }
 
@@ -145,10 +145,10 @@ namespace AlgoDat
         data = Data;
       }
 
-      public Node(int Data, int Key)
+      public Node(int Data, int Priority)
       {
         data = Data;
-        key = Key;
+        priority = Priority;
       }
 
 
