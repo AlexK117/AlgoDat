@@ -200,12 +200,23 @@ namespace AlgoDat
   {
     public override bool Insert(int data)
     {
-      return false;
+      base.Insert(data);
+
+      if (isBalanced(data))
+        return true;
+      else
+        balance(data);
     }
 
     public override bool Delete(int data)
     {
       return false;
+    }
+
+    //in class AVL 4 the time being... should probably be in a higher class, because Treap uses it as well
+    public bool isBalanced(Node n)
+    {
+      isBalanced()
     }
   }
 
