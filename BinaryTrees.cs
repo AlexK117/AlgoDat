@@ -28,7 +28,7 @@ namespace AlgoDat
         Console.WriteLine();
       }
     }
-    public bool Search(int elem)
+    public virtual bool Search(int elem)
     {
       if (_search(elem) != null)
         return true;
@@ -46,7 +46,6 @@ namespace AlgoDat
         root = newItem;
         return true;
       }
-
       else
       {
         Node current = root;
@@ -194,6 +193,60 @@ namespace AlgoDat
       }
       return true;
     }
+
+    public void Rotate(Node Bogdan)
+    {
+      Node parent = _searchPosAbove(Bogdan.data);
+
+
+      if (Bogdan.data < parent.data)
+      {
+        rightRotate(Bogdan, parent);
+      }
+      else
+      {
+        leftRotate(Bogdan, parent);
+      }
+    }
+
+    private void rightRotate(Node Bogdan, Node parent)
+    {
+      Node grandParent;
+
+      parent.left = Bogdan.right;
+      Bogdan.right = parent;
+
+      grandParent = _searchPosAbove(parent.data);
+
+      rotationFinish(Bogdan, parent, grandParent);
+    }
+
+    private void leftRotate (Node Bogdan, Node parent)
+    {
+      Node grandParent;
+
+      parent.right = Bogdan.left;
+      Bogdan.left = parent;
+
+      grandParent = _searchPosAbove(parent.data);
+
+      rotationFinish(Bogdan, parent, grandParent);
+    }
+
+    private void rotationFinish(Node Bogdan, Node parent, Node grandParent)
+    {
+      if (grandParent != null)
+      {
+        if (parent.data < grandParent.data)
+        {
+          grandParent.left = Bogdan;
+        }
+        else
+        {
+          grandParent.right = Bogdan;
+        }
+      }
+    }
   }
 
    class AVLTree : BinSearchTree
@@ -216,46 +269,50 @@ namespace AlgoDat
     //in class AVL 4 the time being... should probably be in a higher class, because Treap uses it as well
     public bool isBalanced(Node n)
     {
-      isBalanced()
+      isBalanced();
     }
   }
 
    class Treap : BinSearchTree
   {
-    public override bool Search(int data)
-    {
-      return base.Search();
-    }
 
     public override bool Insert(int data)
     {
       base.Insert(data);
 
-      Node Current = Node._search(data);
+      Node Current = _search(data);
 
-      while (Current.Prio < Current.above.Prio)
+      while (Current.priority < Current.parent.priority)
       {
-         Current.RotateAround(Current.above);
+        Rotate(Current);
       }
+
+      Random rnd = new Random();
+      int prio = rnd.Next(0, 65536);
+
+      Current.priority = prio;
+
+      return true;
     }
 
     public override bool Delete(int data)
     {
-      Node Current = Node._search(data);
+      Node Current = _search(data);
 
       while (Current.left != null && Current.right != null)
       {
         if(Current.right == null)
         {
-          Current.left.RotateAround(Current);
+          Rotate(Current.left);
         }
         else
         {
-          Current.right.RotateAround(Current);
+          Rotate(Current.right);
         }
       }
 
       Current = null;
+      return false;
 
     }
   }

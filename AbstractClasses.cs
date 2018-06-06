@@ -129,7 +129,7 @@ namespace AlgoDat
 
   abstract class BinaryTree
   {
-    protected class Node
+    internal class Node
     {
       public int data;
       public int priority;
