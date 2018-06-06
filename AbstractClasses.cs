@@ -205,9 +205,6 @@ namespace AlgoDat
       return tmp;
     }
 
-
-
-
     protected void Inorder(Node n)
     {
       if (n == null)
@@ -237,11 +234,10 @@ namespace AlgoDat
       Postorder(n.right);
       Console.Write(n + " ");
     }
+  }
 
-    
-    abstract class HashFkt : Array
-    {
+  abstract class HashFkt : Array
+  {
 
-    }
   }
 }

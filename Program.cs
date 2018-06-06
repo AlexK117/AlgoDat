@@ -11,20 +11,24 @@ namespace AlgoDat
   {
     static void Main(string[] args)
     {
+      int switch_on = 0;
       do
       {
-        Console.WriteLine("Welceh Datenstruktur möchten Sie testen?");
-        Console.WriteLine("Array  --> 1");
-        Console.WriteLine("Liste  --> 2");
-        Console.WriteLine("Baum   --> 3");
-        Console.WriteLine("Hash   --> 4");
-
-        var i = Convert.ToInt32(ReadLine());
+          Console.WriteLine("Welche Datenstruktur möchten Sie testen?");
+          Console.WriteLine("Array  --> 1");
+          Console.WriteLine("Liste  --> 2");
+          Console.WriteLine("Baum   --> 3");
+          Console.WriteLine("Hash   --> 4");
+        try
+        {
+          switch_on = Convert.ToInt32(ReadLine());
+        }
+        catch (System.FormatException) { switch_on = 0; }
 
         IDictionary Test = null;
         string datastruct = "";
 
-        switch (i)
+        switch (switch_on)
         {
           case 1:
             datastruct = "Array";
@@ -33,14 +37,19 @@ namespace AlgoDat
             Console.WriteLine("MultiSetSorted    --> 2");
             Console.WriteLine("SetUnsorted       --> 3");
             Console.WriteLine("SetSorted         --> 4");
-            i = Convert.ToInt32(ReadLine());
-            switch (i)
+            try
+            {
+              switch_on = Convert.ToInt32(ReadLine());
+            }
+            catch (System.FormatException) { switch_on = 0; }
+
+            switch (switch_on)
             {
               case 1:
-                Test = new MultiSetUnsortedLinkedList();
+                Test = new MultiSetUnsortedArray();
                 break;
               case 2:
-                Test = new MultiSetSortedLinkedList();
+                Test = new MultiSetSortedLinkedList();    //Ändern, wenn Arrays fertig
                 break;
               case 3:
                 Test = new SetUnsortedLinkedList();
@@ -50,7 +59,8 @@ namespace AlgoDat
                 break;
 
               default:
-                Console.WriteLine("Nö");
+                switch_on = 0;
+                Console.WriteLine("Nö\n");
                 break;
             }
             break;
@@ -62,8 +72,13 @@ namespace AlgoDat
             Console.WriteLine("MultiSetSorted    --> 2");
             Console.WriteLine("SetUnsorted       --> 3");
             Console.WriteLine("SetSorted         --> 4");
-            i = Convert.ToInt32(ReadLine());
-            switch (i)
+            try
+            {
+              switch_on = Convert.ToInt32(ReadLine());
+            }
+            catch (System.FormatException) { switch_on = 0; }
+
+            switch (switch_on)
             {
               case 1:
                 Test = new MultiSetUnsortedLinkedList();
@@ -77,8 +92,10 @@ namespace AlgoDat
               case 4:
                 Test = new SetSortedLinkedList();
                 break;
+
               default:
-                Console.WriteLine("Nö");
+                switch_on = 0;
+                Console.WriteLine("Nö\n");
                 break;
             }
             break;
@@ -89,8 +106,13 @@ namespace AlgoDat
             Console.WriteLine("BinarySearchTree  --> 1");
             Console.WriteLine("Treap             --> 2");
             Console.WriteLine("AVL               --> 3");
-            i = Convert.ToInt32(ReadLine());
-            switch (i)
+            try
+            {
+              switch_on = Convert.ToInt32(ReadLine());
+            }
+            catch (System.FormatException) { switch_on = 0; }
+
+            switch (switch_on)
             {
               case 1:
                 Test = new BinSearchTree();
@@ -102,77 +124,135 @@ namespace AlgoDat
                 Test = new AVLTree();
                 break;
               default:
-                Console.WriteLine("Nö");
+                switch_on = 0;
+                Console.WriteLine("Nö\n");
                 break;
             }
             break;
+
           case 4:
             datastruct = "Hash";
+            Console.WriteLine($"Welche Art von {datastruct} möchten sie testen?");
+            Console.WriteLine("BinarySearchTree  --> 1");
+            Console.WriteLine("Treap             --> 2");
+            Console.WriteLine("AVL               --> 3");
+            try
+            {
+              switch_on = Convert.ToInt32(ReadLine());
+            }
+            catch (System.FormatException) { switch_on = 0; }
+
+            switch (switch_on)
+            {
+              case 1:
+                Test = new BinSearchTree();     //Anpassen, wenn Hash fertig
+                break;
+              case 2:
+                Test = new Treap();
+                break;
+
+              default:
+                switch_on = 0;
+                Console.WriteLine("Nö\n");
+                break;
+            }
             break;
 
           default:
-            Console.WriteLine("Nö");
+            switch_on = 0;
+            Console.WriteLine("Nö\n");
             break;
         }
 
-        string s = "";
-        do
+        if (switch_on != 0)
         {
-          Console.WriteLine("Welche Operation soll es denn sein? ('0' zum ändern der Struktur)");
-          Console.WriteLine("Einfugen  --> 1");
-          Console.WriteLine("Suchen    --> 2");
-          Console.WriteLine("Loschen   --> 3");
-          Console.WriteLine("Ausgeben  --> 4");
-
-          i = Convert.ToInt32(ReadLine());
-
-
-          switch (i)
+          string s = "";
+          do
           {
-            case 1:
-              Console.WriteLine("Geben sie die Zahlen zum Einfügen ein (zum ändern der Operation 'a' drücken)");
-              s = ReadLine();
-              while (s != "a")
-              {
-                Console.WriteLine(Test.Insert(Convert.ToInt32(s)));
-                s = ReadLine();
-              }
-              break;
-            case 2:
-              Console.WriteLine("Geben sie die Zahlen zum Suchen ein (zum ändern der Operation 'a' drücken)");
-              s = ReadLine();
-              while (s != "a")
-              {
-                Console.WriteLine(Test.Search(Convert.ToInt32(s)));
-                s = ReadLine();
-              }
-              break;
-            case 3:
-              Console.WriteLine("Geben sie die Zahlen zum Löschen ein (zum ändern der Operation 'a' drücken)");
-              s = ReadLine();
-              while (s != "a")
-              {
-                Console.WriteLine(Test.Delete(Convert.ToInt32(s)));
-                s = ReadLine();
-              }
-              break;
-            case 4:
-              Console.WriteLine();
-              Test.Print();
-              Console.WriteLine();
-              break;
-            case 0:
-              s = "N";
-              break;
+            Console.WriteLine("Welche Operation soll es denn sein? ('0' zum ändern der Struktur)");
+            Console.WriteLine("Einfugen  --> 1");
+            Console.WriteLine("Suchen    --> 2");
+            Console.WriteLine("Loschen   --> 3");
+            Console.WriteLine("Ausgeben  --> 4");
 
-            default:
-              Console.WriteLine("Nö");
-              break;
+            try
+            {
+              switch_on = Convert.ToInt32(ReadLine());
+            }
+            catch (System.FormatException) { switch_on = 50; }
+
+            switch (switch_on)
+            {
+              case 1:
+                Console.WriteLine("Geben sie die Zahlen zum Einfügen ein (zum ändern der Operation '+' drücken)");
+                s = ReadLine();
+
+                while (s != "+")
+                {
+                  try
+                  {
+                    Console.WriteLine(Test.Insert(Convert.ToInt32(s)));
+                  }
+                  catch (FormatException)
+                  {
+                    Console.WriteLine("Nur Zahlen eingeben:");
+                  }
+                  s = ReadLine();
+                }
+                break;
+              case 2:
+                Console.WriteLine("Geben sie die Zahlen zum Suchen ein (zum ändern der Operation '+' drücken)");
+                s = ReadLine();
+
+                while (s != "+")
+                {
+                  try
+                  {
+                    Console.WriteLine(Test.Search(Convert.ToInt32(s)));
+                  }
+                  catch (FormatException)
+                  {
+                    Console.WriteLine("Nur Zahlen eingeben:");
+                  }
+                  s = ReadLine();
+                }
+                break;
+              case 3:
+                Console.WriteLine("Geben sie die Zahlen zum Löschen ein (zum ändern der Operation '+' drücken)");
+                s = ReadLine();
+
+                while (s != "+")
+                {
+                  try
+                  {
+                    Console.WriteLine(Test.Delete(Convert.ToInt32(s)));
+                  }
+                  catch (FormatException)
+                  {
+                    Console.WriteLine("Nur Zahlen eingeben:");
+                  }
+                  s = ReadLine();
+                }
+                break;
+              case 4:
+                Console.WriteLine();
+                Test.Print();
+                Console.WriteLine();
+                break;
+              case 0:
+                s = "OP_switch";
+                break;
+
+              default:
+                Console.WriteLine("Nö\n");
+                break;
+            }
           }
+          while (s != "OP_switch");
         }
-        while (s != "N");
       }
-      while (true);
+      while (true);   //Endlose wiederholung
+
       //MultiSetSortedLinkedList neu = new SetSortedLinkedList();
       //neu.Insert(3);
       //neu.Insert(2);
