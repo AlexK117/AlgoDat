@@ -211,14 +211,41 @@ namespace AlgoDat
 
    class Treap : BinSearchTree
   {
+    public override bool Search(int data)
+    {
+      return base.Search();
+    }
+
     public override bool Insert(int data)
     {
-      return false;
+      base.Insert(data);
+
+      Node Current = Node._search(data);
+
+      while (Current.Prio < Current.above.Prio)
+      {
+         Current.RotateAround(Current.above);
+      }
     }
 
     public override bool Delete(int data)
     {
-      return false;
+      Node Current = Node._search(data);
+
+      while (Current.left != null && Current.right != null)
+      {
+        if(Current.right == null)
+        {
+          Current.left.RotateAround(Current);
+        }
+        else
+        {
+          Current.right.RotateAround(Current);
+        }
+      }
+
+      Current = null;
+
     }
   }
 }
