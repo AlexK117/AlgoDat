@@ -1,4 +1,4 @@
-﻿using System;
+﻿<using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -129,14 +129,15 @@ namespace AlgoDat
 
   abstract class BinaryTree
   {
-    protected class Node
+    internal class Node
     {
       public int data;
-      public int key;
+      public int priority;
+      public int balance;
 
       public Node left { get; set; }
       public Node right { get; set; }
-      public Node above { get; set; }
+      public Node parent { get; set; }
 
       public Node() { }
 
@@ -145,10 +146,10 @@ namespace AlgoDat
         data = Data;
       }
 
-      public Node(int Data, int Key)
+      public Node(int Data, int Priority)
       {
         data = Data;
-        key = Key;
+        priority = Priority;
       }
 
 
@@ -205,9 +206,6 @@ namespace AlgoDat
       return tmp;
     }
 
-
-
-
     protected void Inorder(Node n)
     {
       if (n == null)
@@ -237,11 +235,10 @@ namespace AlgoDat
       Postorder(n.right);
       Console.Write(n + " ");
     }
+  }
 
-    
-    abstract class HashFkt : Array
-    {
+  abstract class HashFkt : Array
+  {
 
-    }
   }
 }

@@ -35,3 +35,6 @@ C:\Users\X\Documents\GitHub\AlgoDat\bin\Debug\AlgoDat.exe.config
 C:\Users\X\Documents\GitHub\AlgoDat\bin\Debug\AlgoDat.exe
 C:\Users\X\Documents\GitHub\AlgoDat\bin\Debug\AlgoDat.pdb
 >>>>>>> 3140439e47e0d5ca4a84fe56ea0ec9f3d6b3a1ed
+D:\Benutzer\Philipp\Documents\GitHub\AlgoDat\AlgoDat\bin\Debug\AlgoDat.exe.config
+D:\Benutzer\Philipp\Documents\GitHub\AlgoDat\AlgoDat\obj\Debug\AlgoDat.exe
+D:\Benutzer\Philipp\Documents\GitHub\AlgoDat\AlgoDat\obj\Debug\AlgoDat.pdb
