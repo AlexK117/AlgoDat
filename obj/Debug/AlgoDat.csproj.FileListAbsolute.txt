@@ -38,3 +38,4 @@ C:\Users\X\Documents\GitHub\AlgoDat\bin\Debug\AlgoDat.pdb
 D:\Benutzer\Philipp\Documents\GitHub\AlgoDat\AlgoDat\bin\Debug\AlgoDat.exe.config
 D:\Benutzer\Philipp\Documents\GitHub\AlgoDat\AlgoDat\obj\Debug\AlgoDat.exe
 D:\Benutzer\Philipp\Documents\GitHub\AlgoDat\AlgoDat\obj\Debug\AlgoDat.pdb
+C:\Users\Selina\Documents\GitHub\AlgoDat\obj\Debug\AlgoDat.csprojResolveAssemblyReference.cache

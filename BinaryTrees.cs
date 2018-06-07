@@ -38,46 +38,70 @@ namespace AlgoDat
 
     
     public virtual bool Insert(int data)
-    {
-      Node newItem = new Node(data);
-
-      if (root == null)
-      {
-        root = newItem;
-        return true;
-      }
-      else
-      {
-        Node current = root;
-
-        Node parent = null;
-        while (current != null)
         {
-          parent = current;
-          if (data < current.data)
+          Node newItem = new Node(data);
+
+          if (root == null)
           {
-            current = current.left;
-            if (current == null)//if the current.left is null
-            {
-              parent.left = newItem;//make parent.left store the new node
-              return true;
-            }
+            root = newItem;
+            return true;
           }
           else
           {
-            current = current.right;
-            if (current == null)
+            Node current = root;
+
+            Node parent = null;
+            while (current != null)
             {
-              parent.right = newItem;
-              return true;
+              parent = current;
+              if (data < current.data)
+              {
+                current = current.left;
+                if (current == null)//if the current.left is null
+                {
+                  parent.left = newItem;//make parent.left store the new node
+                  return true;
+                }
+              }
+              else
+              {
+                current = current.right;
+                if (current == null)
+                {
+                  parent.right = newItem;
+                  return true;
+                }
+              }
             }
           }
+          return false;
         }
-      }
-      return false;
-    }
+        /*
+        {
+            if (root == null)               //Neue Wurzel
+            {
+                root = new Node(data);
+                return true;
+            }
 
-    public virtual bool Delete(int data)
+            Node tmp = new Node(data);      //Sonst
+            Node tmp_parent = _searchPosAbove(data); //n = Vorgänger
+
+            if (tmp_parent != null)
+            {
+                tmp.parent = tmp_parent;
+
+                if (tmp_parent.data < data)
+                    tmp_parent.right = tmp;
+                else
+                    tmp_parent.left = tmp;
+
+                return true;
+            }
+            return false;
+        }*/
+
+        public virtual bool Delete(int data)
     {
       if (root == null)
       {
@@ -248,7 +272,7 @@ namespace AlgoDat
       }
     }
   }
-
+    /*
    class AVLTree : BinSearchTree
   {
     public override bool Insert(int data)
@@ -343,5 +367,5 @@ namespace AlgoDat
       return false;
 
     }
-  }
+  }*/
 }

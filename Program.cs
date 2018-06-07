@@ -11,7 +11,7 @@ namespace AlgoDat
   {
     static void Main(string[] args)
     {
-<<<<<<< HEAD
+/*
       do
       {
         Console.WriteLine("Welceh Datenstruktur möchten Sie testen?");
@@ -21,7 +21,7 @@ namespace AlgoDat
         Console.WriteLine("Hash   --> 4");
 
         var i = Convert.ToInt32(ReadLine());
-=======
+
       int switch_on = 0;
       do
       {
@@ -35,16 +35,16 @@ namespace AlgoDat
           switch_on = Convert.ToInt32(ReadLine());
         }
         catch (System.FormatException) { switch_on = 0; }
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
 
         IDictionary Test = null;
         string datastruct = "";
 
-<<<<<<< HEAD
+
         switch (i)
-=======
+
         switch (switch_on)
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
         {
           case 1:
             datastruct = "Array";
@@ -53,7 +53,7 @@ namespace AlgoDat
             Console.WriteLine("MultiSetSorted    --> 2");
             Console.WriteLine("SetUnsorted       --> 3");
             Console.WriteLine("SetSorted         --> 4");
-<<<<<<< HEAD
+
             i = Convert.ToInt32(ReadLine());
             switch (i)
             {
@@ -62,7 +62,7 @@ namespace AlgoDat
                 break;
               case 2:
                 Test = new MultiSetSortedLinkedList();
-=======
+
             try
             {
               switch_on = Convert.ToInt32(ReadLine());
@@ -76,7 +76,7 @@ namespace AlgoDat
                 break;
               case 2:
                 Test = new MultiSetSortedLinkedList();    //Ändern, wenn Arrays fertig
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
                 break;
               case 3:
                 Test = new SetUnsortedLinkedList();
@@ -86,12 +86,12 @@ namespace AlgoDat
                 break;
 
               default:
-<<<<<<< HEAD
+
                 Console.WriteLine("Nö");
-=======
+
                 switch_on = 0;
                 Console.WriteLine("Nö\n");
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
                 break;
             }
             break;
@@ -103,10 +103,10 @@ namespace AlgoDat
             Console.WriteLine("MultiSetSorted    --> 2");
             Console.WriteLine("SetUnsorted       --> 3");
             Console.WriteLine("SetSorted         --> 4");
-<<<<<<< HEAD
+
             i = Convert.ToInt32(ReadLine());
             switch (i)
-=======
+
             try
             {
               switch_on = Convert.ToInt32(ReadLine());
@@ -114,7 +114,7 @@ namespace AlgoDat
             catch (System.FormatException) { switch_on = 0; }
 
             switch (switch_on)
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
             {
               case 1:
                 Test = new MultiSetUnsortedLinkedList();
@@ -128,15 +128,15 @@ namespace AlgoDat
               case 4:
                 Test = new SetSortedLinkedList();
                 break;
-<<<<<<< HEAD
+
               default:
                 Console.WriteLine("Nö");
-=======
+
 
               default:
                 switch_on = 0;
                 Console.WriteLine("Nö\n");
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
                 break;
             }
             break;
@@ -147,10 +147,10 @@ namespace AlgoDat
             Console.WriteLine("BinarySearchTree  --> 1");
             Console.WriteLine("Treap             --> 2");
             Console.WriteLine("AVL               --> 3");
-<<<<<<< HEAD
+
             i = Convert.ToInt32(ReadLine());
             switch (i)
-=======
+
             try
             {
               switch_on = Convert.ToInt32(ReadLine());
@@ -158,7 +158,7 @@ namespace AlgoDat
             catch (System.FormatException) { switch_on = 0; }
 
             switch (switch_on)
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
             {
               case 1:
                 Test = new BinSearchTree();
@@ -170,7 +170,7 @@ namespace AlgoDat
                 Test = new AVLTree();
                 break;
               default:
-<<<<<<< HEAD
+
                 Console.WriteLine("Nö");
                 break;
             }
@@ -242,7 +242,7 @@ namespace AlgoDat
         while (s != "N");
       }
       while (true);
-=======
+
                 switch_on = 0;
                 Console.WriteLine("Nö\n");
                 break;
@@ -372,7 +372,7 @@ namespace AlgoDat
       }
       while (true);   //Endlose wiederholung
 
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
       //MultiSetSortedLinkedList neu = new SetSortedLinkedList();
       //neu.Insert(3);
       //neu.Insert(2);
@@ -402,15 +402,14 @@ namespace AlgoDat
       //BinSearchTree tree = new BinSearchTree();
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
       /* Zum Testen vom BinSearchTree*/
       BinSearchTree tree = new BinSearchTree();
-      /*
-      tree.Insert(5);
+      
       tree.Insert(1);
       tree.Insert(3);
-     tree.Insert(8);
+      tree.Insert(2);
+            Console.WriteLine(tree.Insert(4));
+    /* tree.Insert(8);
       tree.Insert(6);
       tree.Insert(0);
      tree.Insert(2);
@@ -419,11 +418,8 @@ namespace AlgoDat
       tree.Insert(29);
       tree.Insert(28);
       tree.Insert(30);
-      tree.Insert(26);*/
-     tree.Insert(1);
-=======
-=======
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+      tree.Insert(26);
+
       //tree.Insert(1);
       //tree.Insert(3);
       //tree.Insert(8);
@@ -437,10 +433,7 @@ namespace AlgoDat
       //tree.Insert(30);
       //tree.Insert(26);
       //tree.Insert(-1);
-<<<<<<< HEAD
->>>>>>> 3140439e47e0d5ca4a84fe56ea0ec9f3d6b3a1ed
-=======
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
       //tree.Insert(-3);
       //tree.Insert(-2);
       //tree.Insert(-4);
@@ -450,26 +443,21 @@ namespace AlgoDat
       //tree.Insert(-7);
       //WriteLine(tree.Insert(8));
       //WriteLine(tree.Insert(0));
-<<<<<<< HEAD
-<<<<<<< HEAD
-
+*/
       tree.Print();
 
-      tree.Delete(1);
+      tree.Delete(3);
 
       tree.Print();
-=======
+            /*
       //tree.Print();
->>>>>>> 3140439e47e0d5ca4a84fe56ea0ec9f3d6b3a1ed
-=======
-      //tree.Print();
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
       //Console.WriteLine(tree.Search(9));
       //Console.WriteLine(tree.Search(1));
       //Console.WriteLine(tree.Search(6));
       //tree.Printv();
       //Console.ReadKey();
-<<<<<<< HEAD
+
 
       
       /*
@@ -483,8 +471,8 @@ namespace AlgoDat
       ar.Print();
       Console.ReadKey();
       */
-=======
->>>>>>> ca1b4af4d47dc26350abff7d803099fc0128d64f
+
     }
   }
 }
+
