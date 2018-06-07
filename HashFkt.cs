@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AlgoDat
-{
-  class HashTabSepChain : HashFkt//, ISet
+{/*
+  class HashTabSepChain : HashFkt, ISet
   {
 
   }
 
-  class HashTabQuadProb : HashFkt//, ISet
+  class HashTabQuadProb : HashFkt, ISet
   {
 
-  }
+  }*/
 }

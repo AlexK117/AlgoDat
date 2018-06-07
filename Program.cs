@@ -11,7 +11,10 @@ namespace AlgoDat
   {
     static void Main(string[] args)
     {
+<<<<<<< HEAD
 /*
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
       do
       {
         Console.WriteLine("Welceh Datenstruktur möchten Sie testen?");
@@ -21,6 +24,7 @@ namespace AlgoDat
         Console.WriteLine("Hash   --> 4");
 
         var i = Convert.ToInt32(ReadLine());
+<<<<<<< HEAD
 
       int switch_on = 0;
       do
@@ -36,15 +40,21 @@ namespace AlgoDat
         }
         catch (System.FormatException) { switch_on = 0; }
 
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
 
         IDictionary Test = null;
         string datastruct = "";
 
+<<<<<<< HEAD
 
         switch (i)
 
         switch (switch_on)
 
+=======
+        switch (i)
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
         {
           case 1:
             datastruct = "Array";
@@ -53,7 +63,10 @@ namespace AlgoDat
             Console.WriteLine("MultiSetSorted    --> 2");
             Console.WriteLine("SetUnsorted       --> 3");
             Console.WriteLine("SetSorted         --> 4");
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
             i = Convert.ToInt32(ReadLine());
             switch (i)
             {
@@ -62,6 +75,7 @@ namespace AlgoDat
                 break;
               case 2:
                 Test = new MultiSetSortedLinkedList();
+<<<<<<< HEAD
 
             try
             {
@@ -77,6 +91,8 @@ namespace AlgoDat
               case 2:
                 Test = new MultiSetSortedLinkedList();    //Ändern, wenn Arrays fertig
 
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
                 break;
               case 3:
                 Test = new SetUnsortedLinkedList();
@@ -86,12 +102,16 @@ namespace AlgoDat
                 break;
 
               default:
+<<<<<<< HEAD
 
                 Console.WriteLine("Nö");
 
                 switch_on = 0;
                 Console.WriteLine("Nö\n");
 
+=======
+                Console.WriteLine("Nö");
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
                 break;
             }
             break;
@@ -103,6 +123,7 @@ namespace AlgoDat
             Console.WriteLine("MultiSetSorted    --> 2");
             Console.WriteLine("SetUnsorted       --> 3");
             Console.WriteLine("SetSorted         --> 4");
+<<<<<<< HEAD
 
             i = Convert.ToInt32(ReadLine());
             switch (i)
@@ -115,6 +136,10 @@ namespace AlgoDat
 
             switch (switch_on)
 
+=======
+            i = Convert.ToInt32(ReadLine());
+            switch (i)
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
             {
               case 1:
                 Test = new MultiSetUnsortedLinkedList();
@@ -128,6 +153,7 @@ namespace AlgoDat
               case 4:
                 Test = new SetSortedLinkedList();
                 break;
+<<<<<<< HEAD
 
               default:
                 Console.WriteLine("Nö");
@@ -137,6 +163,10 @@ namespace AlgoDat
                 switch_on = 0;
                 Console.WriteLine("Nö\n");
 
+=======
+              default:
+                Console.WriteLine("Nö");
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
                 break;
             }
             break;
@@ -147,6 +177,7 @@ namespace AlgoDat
             Console.WriteLine("BinarySearchTree  --> 1");
             Console.WriteLine("Treap             --> 2");
             Console.WriteLine("AVL               --> 3");
+<<<<<<< HEAD
 
             i = Convert.ToInt32(ReadLine());
             switch (i)
@@ -159,6 +190,10 @@ namespace AlgoDat
 
             switch (switch_on)
 
+=======
+            i = Convert.ToInt32(ReadLine());
+            switch (i)
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
             {
               case 1:
                 Test = new BinSearchTree();
@@ -170,7 +205,10 @@ namespace AlgoDat
                 Test = new AVLTree();
                 break;
               default:
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
                 Console.WriteLine("Nö");
                 break;
             }
@@ -242,6 +280,7 @@ namespace AlgoDat
         while (s != "N");
       }
       while (true);
+<<<<<<< HEAD
 
                 switch_on = 0;
                 Console.WriteLine("Nö\n");
@@ -373,6 +412,8 @@ namespace AlgoDat
       while (true);   //Endlose wiederholung
 
 
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
       //MultiSetSortedLinkedList neu = new SetSortedLinkedList();
       //neu.Insert(3);
       //neu.Insert(2);
@@ -402,6 +443,10 @@ namespace AlgoDat
       //BinSearchTree tree = new BinSearchTree();
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
       /* Zum Testen vom BinSearchTree*/
       BinSearchTree tree = new BinSearchTree();
       
@@ -418,8 +463,14 @@ namespace AlgoDat
       tree.Insert(29);
       tree.Insert(28);
       tree.Insert(30);
+<<<<<<< HEAD
       tree.Insert(26);
 
+=======
+      tree.Insert(26);*/
+     tree.Insert(1);
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
       //tree.Insert(1);
       //tree.Insert(3);
       //tree.Insert(8);
@@ -433,7 +484,11 @@ namespace AlgoDat
       //tree.Insert(30);
       //tree.Insert(26);
       //tree.Insert(-1);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3140439e47e0d5ca4a84fe56ea0ec9f3d6b3a1ed
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
       //tree.Insert(-3);
       //tree.Insert(-2);
       //tree.Insert(-4);
@@ -443,21 +498,35 @@ namespace AlgoDat
       //tree.Insert(-7);
       //WriteLine(tree.Insert(8));
       //WriteLine(tree.Insert(0));
+<<<<<<< HEAD
 */
+=======
+<<<<<<< HEAD
+
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
       tree.Print();
 
       tree.Delete(3);
 
       tree.Print();
+<<<<<<< HEAD
             /*
       //tree.Print();
 
+=======
+=======
+      //tree.Print();
+>>>>>>> 3140439e47e0d5ca4a84fe56ea0ec9f3d6b3a1ed
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
       //Console.WriteLine(tree.Search(9));
       //Console.WriteLine(tree.Search(1));
       //Console.WriteLine(tree.Search(6));
       //tree.Printv();
       //Console.ReadKey();
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
 
       
       /*
@@ -471,7 +540,10 @@ namespace AlgoDat
       ar.Print();
       Console.ReadKey();
       */
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 52ac3fa... Merge branch 'master' of https://github.com/AlexK117/AlgoDat
     }
   }
 }

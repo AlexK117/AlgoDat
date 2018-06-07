@@ -129,15 +129,14 @@ namespace AlgoDat
 
   abstract class BinaryTree
   {
-    internal class Node
+    protected class Node
     {
       public int data;
-      public int priority;
-      public int balance;
+      public int key;
 
       public Node left { get; set; }
       public Node right { get; set; }
-      public Node parent { get; set; }
+      public Node above { get; set; }
 
       public Node() { }
 
@@ -146,10 +145,10 @@ namespace AlgoDat
         data = Data;
       }
 
-      public Node(int Data, int Priority)
+      public Node(int Data, int Key)
       {
         data = Data;
-        priority = Priority;
+        key = Key;
       }
 
 
@@ -206,6 +205,9 @@ namespace AlgoDat
       return tmp;
     }
 
+
+
+
     protected void Inorder(Node n)
     {
       if (n == null)
@@ -235,10 +237,11 @@ namespace AlgoDat
       Postorder(n.right);
       Console.Write(n + " ");
     }
-  }
 
-  abstract class HashFkt : Array
-  {
+    
+    abstract class HashFkt : Array
+    {
 
+    }
   }
 }
